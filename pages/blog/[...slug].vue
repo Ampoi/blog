@@ -5,9 +5,11 @@
         <i class="fa-solid fa-chevron-left text-slate-500"></i>
       </NuxtLink>
     </div>
-    <div class="bg-white/40 rounded-xl p-5 flex flex-col gap-2">
-      <div :style="`background-image:url(${article.eyecatch.url})`" class="relative bg-center bg-cover before:pt-[60%] before:block rounded-md"/>
-      <h1 class="text-3xl font-bold text-center">{{article.title}}</h1>
+    <div class="bg-white/40 rounded-xl p-5 flex flex-col gap-8">
+      <div>
+        <div :style="`background-image:url(${article.eyecatch.url})`" class="relative bg-center bg-cover before:pt-[60%] before:block rounded-md"/>
+        <h1 class="text-3xl font-bold text-center mt-4">{{article.title}}</h1>
+      </div>
       <div v-html="article.content" id="mainContent"/>
     </div>
   </div>
