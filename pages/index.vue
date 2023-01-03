@@ -36,7 +36,7 @@
           <h1 class="text-6xl font-bold -ml-4 text-black/20">02</h1>
           <h1 class="text-5xl font-bold -mt-8">Blog</h1>
         </div>
-        <p class="mt-2 text-lg">ブログです。micro-cmsで管理してます。</p>
+        <p class="mt-2 text-lg">ブログです。microCMSで管理してます。</p>
         <div class="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
           <NuxtLink
             v-for="blog in blogs"
