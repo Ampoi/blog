@@ -1,16 +1,18 @@
 <template>
-  <div class="flex flex-col max-w-2xl mx-5 mt-10 gap-4">
-    <div>
-      <NuxtLink to="/">
-        <i class="fa-solid fa-chevron-left text-slate-500"></i>
-      </NuxtLink>
-    </div>
-    <div class="bg-white/40 rounded-xl p-5 flex flex-col gap-8">
+  <div class="mx-5">
+    <div class="flex flex-col max-w-2xl mx-auto mt-10 gap-4">
       <div>
-        <div :style="`background-image:url(${article.eyecatch.url})`" class="relative bg-center bg-cover before:pt-[60%] before:block rounded-md"/>
-        <h1 class="text-3xl font-bold text-center mt-4">{{article.title}}</h1>
+        <NuxtLink to="/">
+          <i class="fa-solid fa-chevron-left text-slate-500"></i>
+        </NuxtLink>
       </div>
-      <div v-html="article.content" id="mainContent"/>
+      <div class="bg-white/40 rounded-xl p-5 flex flex-col gap-8">
+        <div>
+          <div :style="`background-image:url(${article.eyecatch.url})`" class="relative bg-center bg-cover before:pt-[60%] before:block rounded-md"/>
+          <h1 class="text-3xl font-bold text-center mt-4">{{article.title}}</h1>
+        </div>
+        <div v-html="article.content" id="mainContent"/>
+      </div>
     </div>
   </div>
 </template>
