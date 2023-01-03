@@ -20,6 +20,14 @@
           <h1 class="text-5xl font-bold -mt-8">作字</h1>
         </div>
         <p class="mt-2 text-lg">字のデザインをしたりとかしてます。</p>
+        <div class="flex flex-row gap-8 h-72 overflow-x-auto p-4 snap-x relative snap-mandatory">
+          <img
+            :src="sakuji.image.url"
+            v-for="sakuji in sakujis"
+            :key="sakuji.key"
+            class="rounded-md shadow-lg snap-center"
+          >
+        </div>
       </div>
     </div>
     <div class="snap-center h-screen w-screen grid place-content-center">
@@ -50,6 +58,7 @@ import  { createClient } from "microcms-js-sdk"
 export default {
   data(){return{
     blogs: [],
+    sakujis: [],
     client: createClient({
       serviceDomain: "ampoi-blog",
       apiKey: useRuntimeConfig().public.apikey
@@ -63,6 +72,13 @@ export default {
       .then((res) => {
         this.blogs = res.contents
       });
+    this.client
+      .get({
+        endpoint: 'sakuji'
+      })
+      .then((res) => {
+        this.sakujis = res.contents
+      })
   }
 }
 </script>
