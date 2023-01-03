@@ -30,14 +30,15 @@
         </div>
         <p class="mt-2 text-lg">ブログです。micro-cmsで管理してます。</p>
         <div class="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div
+          <NuxtLink
             v-for="blog in blogs"
             :key="blog.key"
             class="flex flex-col bg-white/40 rounded-md"
+            :to="`blog/${blog.id}`"
           >
-            <div :style="`background-image: url(${blog.eyecatch.url});`" class="basis-40 bg-cover rounded-t-md"></div>
+            <div :style="`background-image: url(${blog.eyecatch.url});`" class="bg-cover rounded-t-md before:pt-[60%] before:block relative"></div>
             <h2 class="p-4 pt-2 text-xl font-bold border-2 border-t-0 rounded-md border-white/40">{{blog.title}}</h2>
-          </div>
+          </NuxtLink>
         </div>
       </div>
     </div>
